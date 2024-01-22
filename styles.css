@@ -85,9 +85,22 @@ p {
     max-width: 62ch;
     margin-bottom: 2rem;
 }
-/* -------------------------------------------------Body----------------------------------------------------- */
+/* ------------------------Main---------------------------------------------------------------------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
     font-family: "Young Serif", sans-serif;
+}
+ul > li {
+    display: flex;
+    align-items: start;
+    font-weight: 900
+}
+ul > li:before {
+    content: ".";
+    margin-right: 1rem;
+}
+ul {
+    counter-reset: muffins;
+    margin: 1rem 0 0;
 }
 body {
     min-height: 100dvh;
@@ -96,8 +109,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
     max-width: 575px;
     background-color: var(--white);
 }
@@ -110,12 +128,13 @@ main {
     margin: 2rem;
 }
 .intro > h1 {
-    text-align: center;
     font-size: 2rem;
+    text-align: center;
     color: var(--dark-charcoal);
 }
 .intro > p {
     margin-top: 1rem;
+    font-size: .92rem;
     color: var(--wenge-brown);
 }
 .prep {
@@ -124,8 +143,8 @@ main {
     background-color: #fadef256;
 }
 .prep > h2 {
-    font-size: 1.2rem;
     font-weight: 700;
+    font-size: 1.2rem;
     color: var(--dark-raspberry);
     font-family: "Young Serif", sans-serif;
     font-family: 'Outfits', sans-serif;
@@ -151,7 +170,7 @@ main {
     margin-top: 1rem;
 }
 .ing > h3 {
-    font-size: 2rem;
+    font-size: 1.4rem;
     color: var(--nutmeg);
 }
 .ing > ul > li {
@@ -160,16 +179,16 @@ main {
     margin: 5px;
 }
 .ing > ul > li > span {
+    font-weight: normal;
     color: var(--wenge-brown);
 }
-/* --------------------------------End Ingredients-------------------------------------------------------------------------------------------------- */
-/* --------------------------------Start Instructions-------------------------------------------------------------------------------------------------- */
+/* --------------------------------Instructions-------------------------------------------------------------------------------------------------- */
 .inst {
     margin-bottom: 1rem;
 }
 .inst > h3 {
+    font-size: 1.4rem;    
     color: var(--nutmeg);
-    font-size: 2rem;    
 }
 .inst > ol > li {
     color: var(--nutmeg);
@@ -199,16 +218,14 @@ main {
     counter-reset: muffins;
     margin: 1rem 0 0;
 }
-
-/* --------------------------------End Instructions-------------------------------------------------------------------------------------------------- */
-/* --------------------------------Start Nutrition-------------------------------------------------------------------------------------------------- */
+/* --------------------------------Nutrition-------------------------------------------------------------------------------------------------- */
 .nut {
     margin-bottom: 1rem;
     color: var(--wenge-brown);
 }
 .nut > h4 {
     color: var(--nutmeg);
-    font-size: 2rem;
+    font-size: 1.4rem;
 }
 .nut table {
     width: 100%;
@@ -229,19 +246,12 @@ td:nth-child(even) {
     font-weight: 900;
     color: var(--nutmeg);
 }
- 
-
 @media(min-width: 768px) {
     body {
-        justify-content: center;
         margin: 2rem;
     }
     main {
-        max-width: 750px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: start;
+        max-width: 750px;       
         border-radius: 2rem;
     }
     .hero {
@@ -249,142 +259,29 @@ td:nth-child(even) {
         margin: 2rem auto;
         max-width: 680px;
     }
-    .sample {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        justify-content: space-between;
-        gap: 1rem;
-        margin: 0 2rem;
-    }
     .hr {
         width: 100%;
         margin: 1rem 0; 
         border: 1px solid rgb(231, 227, 227);
     }
-    body {
-        background-color: var(--eggshell);
-    }
     .intro > h1 {
-        color: var(--dark-charcoal);
-        font-size: 2.5rem;
+        text-align: left;
+        font-size: 2.6rem;
         margin-bottom: 1rem;
     }
-    .intro > p {
-        color: var(--wenge-brown);
-    }
-    /* --------------------------------Preparation-------------------------------------------------------------------------------------------------- */
-    .prep {
-        width: 100%;
-        padding: 2rem;
-        background-color: rgba(216, 179, 185, 0.16);
-    }
     .prep > h2 {
-        font-size: 1.2rem;
-        font-weight: 900;
-        color: var(--dark-raspberry);
-        font-family: 'Outfits', sans-serif;
-    }
-    .prep > ul {
-        list-style: disc;
-        list-style-position: inside;
+        font-size: 1.6rem;
     }
     .prep > ul > li {
         margin: 1rem 0;
-        color: var(--dark-raspberry);
-        margin: 5px;
-    }
-    .prep > ul > li > span {
-        color: var(--wenge-brown);
-        font-weight: 900;
-    }
-    .prep > ul > li > span > span {
-        font-weight: normal;
-    }
-    /* --------------------------------Preparation-------------------------------------------------------------------------------------------------- */
-    /* --------------------------------Ingredients-------------------------------------------------------------------------------------------------- */
-    .ing {
-        align-self: start;
-        margin-top: 1rem;
     }
     .ing > h3 {
         font-size: 2rem;
-        color: var(--nutmeg);
-    }
-    .ing > ul > li {
-        margin: 1rem 0;
-        color: var(--nutmeg);
-        margin: 5px;
-    }
-    .ing > ul > li > span {
-        color: var(--wenge-brown);
-    }
-    /* --------------------------------End Ingredients-------------------------------------------------------------------------------------------------- */
-    /* --------------------------------Start Instructions-------------------------------------------------------------------------------------------------- */
-    .inst {
-        margin-bottom: 1rem;
     }
     .inst > h3 {
-        color: var(--nutmeg);
         font-size: 2rem;    
     }
-    .inst > ol > li {
-        color: var(--nutmeg);
-        font-weight: 900;
-    }
-    .inst > ol > li {
-        color: var(--dark-raspberry);
-        margin: 5px;
-    }
-    .inst > ol > li > span {
-        color: var(--wenge-brown);
-        font-weight: 900;
-    }
-    .inst > ol > li > span > span {
-        font-weight: normal;
-    }
-    .inst > ol > li {
-        counter-increment: muffins;
-        display: flex;
-        align-items: start;
-    
-    }
-    .inst > ol > li:before {
-        content: counter(muffins) ". ";
-        margin-right: 1rem;
-    }
-    .inst > ol {
-        counter-reset: muffins;
-        margin: 1rem 0 0;
-    }
-    
-    /* --------------------------------End Instructions-------------------------------------------------------------------------------------------------- */
-    /* --------------------------------Start Nutrition-------------------------------------------------------------------------------------------------- */
-    .nut {
-        margin-bottom: 1rem;
-        color: var(--wenge-brown);
-    }
     .nut > h4 {
-        color: var(--nutmeg);
         font-size: 2rem;
-    }
-    .nut table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    tr:not(:last-child) {
-        border-bottom: 1px solid #ddd;
-    }
-    td {
-        padding: 8px;
-        text-align: left;
-    }
-    td:nth-child(odd) {
-        font-weight: 600;
-        color: var(--wenge-brown);
-    }
-    td:nth-child(even) {
-        font-weight: 900;
-        color: var(--nutmeg);
     }
 }
